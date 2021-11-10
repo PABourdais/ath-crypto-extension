@@ -1,6 +1,6 @@
-let color = '#3aa757';
+let cryptoList = ['BTC','ETH'];
 
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ color });
-  console.log('Default background color set to %cgreen', `color: ${color}`);
+  chrome.storage.sync.set({ cryptoList });
+  console.log('Default coin is set to BTC and ETH', `cryptoList: ${cryptoList}`);
 });
