@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="button.css">
   </head>
   <body>
-    <div id="buttonDiv">
-    </div>
-    <div>
-      <p>Choose a different background color!</p>
+    <div >
+      <div>
+        <label for="coin-select">Choose a coin:</label>
+        <select name="coins" id="coin-select">
+          <option value="">--Please choose a coin--</option>
+          <option value="btc">BTC</option>
+          <option value="eth">ETH</option>
+          <option value="ada">ADA</option>
+          <option value="dot">DOT</option>
+          <option value="egld">EGLD</option>
+          <option value="bnb">BNB</option>
+        </select>
+      </div>
     </div>
   </body>
   <script src="options.js"></script>
