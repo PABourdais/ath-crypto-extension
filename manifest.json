@@ -1,6 +1,6 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "ATH crypto notification",
+  "description": "Send a notification as soon as a coin hits a new all time high. You can set up your favorite coins in the extension !",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
