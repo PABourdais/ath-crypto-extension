@@ -9,7 +9,14 @@ Send a notification as soon as a coin hits a new all time high.
 
 ---
 
-**Run it:**
+Features
+--------
+
+- Send a notification as soon as a coin hits a new all time high.
+
+
+Installation
+--------
 
 1. Open the Extension Management page by navigating to chrome://extensions.
 2.  Alternatively, open this page by clicking on the Extensions menu button and selecting Manage Extensions at the bottom of the menu.
@@ -17,6 +24,16 @@ Send a notification as soon as a coin hits a new all time high.
 4. Enable Developer Mode by clicking the toggle switch next to Developer mode.
 5. Click the Load unpacked button and select the extension directory.
 
+
+Contributing
+------------
+
+1. Check the open issues or open a new issue to start a discussion around
+   your feature idea or the bug you found
+2. Fork the repository, make your changes, and add yourself to [authors.md][]
+3. Send a pull request
+
+If your PR has been waiting a while, feel free to [ping me on Twitter](https://twitter.com/pa_brds).
 
 ---
 
