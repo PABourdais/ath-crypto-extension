@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <div>
-      <label for="coin-select">Choose a coin:</label>
-      <select name="coins" id="coin-select">
-        <option value="">--Please choose a coin--</option>
-        <option value="btc">BTC</option>
-        <option value="eth">ETH</option>
-        <option value="ada">ADA</option>
-        <option value="dot">DOT</option>
-        <option value="egld">EGLD</option>
-        <option value="bnb">BNB</option>
-      </select>
+  <body class="main-container">
+    <div class="search">
+      <h2>Rechercher une crypto</h2>
+      <input type="search" id="crypto-search" name="q"
+             aria-label="Search through site content"
+             placeholder='BTC ...'>
+      <button>Search</button>
     </div>
-    <div>
+    <div id="list">
       <p>Subscribe to:</p>
       <ul>
         <li>BTC</li>
