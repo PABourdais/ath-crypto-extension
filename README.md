@@ -30,7 +30,7 @@ Contributing
 
 1. Check the open issues or open a new issue to start a discussion around
    your feature idea or the bug you found
-2. Fork the repository, make your changes, and add yourself to [authors.md](/authors)
+2. Fork the repository, make your changes, and add yourself to [authors.md](authors.md)
 3. Send a pull request
 
 If your PR has been waiting a while, feel free to [ping me on Twitter](https://twitter.com/pa_brds).
