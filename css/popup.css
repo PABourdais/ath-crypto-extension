@@ -1,0 +1,42 @@
+html {
+    position: relative;
+    width: 500px;
+}
+
+body {
+    font-family: arial, sans-serif;
+    font-size: 0.8em;
+}
+
+a.imageLink
+{
+    opacity: 0.5;
+    -webkit-transition:opacity 0.05s ease-in;
+}
+
+a.imageLink:hover, a.imageLink.fakeHover
+{
+    opacity: 1;
+}
+
+a
+{
+    text-decoration: none;
+    color: #79B;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+#crypto-search{
+    background-image: url('../images/search_icone.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    font-size: 12px;
+    width: 80%;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}

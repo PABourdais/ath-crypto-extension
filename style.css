@@ -1,29 +1,4 @@
-body {
-    width: 500px;
-    height: 300px
-}
 
-a {
-    color: #0060B6;
-    text-decoration: none;
-}
-
-a:hover {
-    color:#00A0C6;
-    text-decoration:none;
-    cursor:pointer;
-}
-
-#crypto-search {
-    background-image: url('/images/search-icone.png');
-    background-position: 10px 12px;
-    background-repeat: no-repeat;
-    width: 50%;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid #ddd;
-    margin-bottom: 12px;
-}
 
 #list p{
     font-size: 16px;

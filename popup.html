@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+
+    <title> ATH crypto notification - Popup page</title>
   </head>
   <body class="main-container">
     <div class="search">
-      <h2>Rechercher une crypto</h2>
+      <h3>Rechercher une crypto</h3>
       <input type="search" id="crypto-search" name="q"
              aria-label="Search through site content"
              placeholder='BTC ...'>
       <button>Search</button>
     </div>
     <div id="list">
-      <p>Subscribe to:</p>
+      <p>Crypto suivies :</p>
       <ul>
         <li><a target="_blank" href="https://coinmarketcap.com/fr/currencies/bitcoin/">BTC</a></li>
         <li><a target="_blank" href="https://coinmarketcap.com/fr/currencies/ethereum/">ETH</a></li>
         <li><a target="_blank" href="https://coinmarketcap.com/fr/currencies/cardano/">ADA</a></li>
       </ul>
     </div>
+
+    <div id="menu">
+      <a href="" id="options" class="imageLink" ><img alt="option" src="images/wrench.png" /></a>
+      <a href="https://github.com/PABourdais/ath-crypto-extension" id="github" class="imageLink" target="_blank"><img alt="github" src="images/logo_github.png" /></a>
+    </div>
+
   </body>
 </html>
