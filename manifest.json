@@ -23,5 +23,8 @@
     "128": "/images/ath_crypto128.png"
   },
   "options_page": "options.html",
-  "default_locale": "fr"
+  "default_locale": "fr",
+  "host_permissions": [
+    "https://static.coinpaper.io/"
+  ]
 }
