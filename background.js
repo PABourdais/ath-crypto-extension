@@ -1,4 +1,4 @@
-let cryptoList = ['BTC','ETH'];
+let cryptoList = ['BTC','ETH', 'ADA', 'EGLD', 'AVAX'];
 
 chrome.alarms.onAlarm.addListener(a => {
   console.log(`cryptoList: ${cryptoList}`, a);
