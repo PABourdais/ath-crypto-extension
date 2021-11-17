@@ -7,6 +7,10 @@ Send a notification as soon as a coin hits a new all time high.
   <a href="https://github.com/PABourdais/ath-crypto-extension/"><img src="https://img.shields.io/github/repo-size/PABourdais/ath-crypto-extension.svg?style=flat-square" alt="Repo size"></a>
 </p>
 
+<p align="center" >
+   <a href="https://github.com/PABourdais/ath-crypto-extension/blob/main/LICENSE"><img src=" https://img.shields.io/github/license/PABourdais/ath-crypto-extension.svg?style=flat-square" alt="License"></a>
+</p>
+
 ---
 
 Features
