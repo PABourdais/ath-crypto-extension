@@ -31,7 +31,7 @@ a:hover
 }
 
 #crypto-search{
-    background-image: url('../images/search_icone.png');
+    background-image: url('../public/images/search_icone.png');
     background-position: 10px 12px;
     background-repeat: no-repeat;
     font-size: 12px;
