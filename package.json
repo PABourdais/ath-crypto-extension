@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.164"
+    "@types/chrome": "^0.0.164",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
