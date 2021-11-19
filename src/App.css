@@ -3,14 +3,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .List {
@@ -47,4 +47,22 @@ a
 a:hover
 {
   text-decoration: underline;
+}
+
+#crypto-search {
+  background-image: url('../src/images/search_icone.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: calc(5px + 2vmin);
 }
