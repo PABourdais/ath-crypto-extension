@@ -16,12 +16,13 @@ export const App = () => {
     const listItems = crytpoList.map((crypto: {} | null | undefined, index: number) =>
         <li className="List-content">
             <a target="_blank" href={"https://www.google.com/search?q=" + crypto}>{crypto}</a>
+            - 500 $
             <button
                 onClick={() => {
                     deleteCrytpoList(index);
                 }}
             >
-                <img alt="github" src={trash}/>
+                <img alt="remove" src={trash}/>
             </button>
         </li>
     );
