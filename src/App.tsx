@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+
+import {useChromeStorageLocal} from 'use-chrome-storage';
+
 import logo_github from './images/logo_github.png';
 import wrench from './images/wrench.png';
 import trash from './images/trash.png';
@@ -6,10 +9,11 @@ import trash from './images/trash.png';
 import './App.css';
 
 export const App = () => {
-    const [crytpoList, setCrytpoList] = useState<string[]>(['BTC', 'ETH', 'EGLD', 'ADA']);
+    const [crytpoList, setCrytpoList, isPersistent, error] = useChromeStorageLocal('counterLocal', ['BTC', 'ETH', 'EGLD', 'ADA']);
+
     const [input, setInput] = useState<string>('');
 
-    const listItems = crytpoList.map((crypto, index) =>
+    const listItems = crytpoList.map((crypto: {} | null | undefined, index: number) =>
         <li className="List-content">
             <a target="_blank" href={"https://www.google.com/search?q=" + crypto}>{crypto}</a>
             <button
@@ -24,7 +28,7 @@ export const App = () => {
 
     /* delete item in crytpoList*/
     const deleteCrytpoList = (cryptoIndex: number) => {
-        const newCrytpoList = crytpoList.filter((_, index) => index !== cryptoIndex);
+        const newCrytpoList = crytpoList.filter((_: any, index: number) => index !== cryptoIndex);
         setCrytpoList(newCrytpoList);
     }
 
