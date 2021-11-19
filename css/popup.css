@@ -8,28 +8,6 @@ body {
     font-size: 0.8em;
 }
 
-a.imageLink
-{
-    opacity: 0.5;
-    -webkit-transition:opacity 0.05s ease-in;
-}
-
-a.imageLink:hover, a.imageLink.fakeHover
-{
-    opacity: 1;
-}
-
-a
-{
-    text-decoration: none;
-    color: #79B;
-}
-
-a:hover
-{
-    text-decoration: underline;
-}
-
 #crypto-search{
     background-image: url('../public/images/search_icone.png');
     background-position: 10px 12px;
