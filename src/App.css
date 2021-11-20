@@ -62,10 +62,16 @@ a:hover
   font-size: calc(5px + 1vmin);
 }
 
-table {
-  width: 90%;
-  border-collapse: collapse;
+.list {
   border: 1px solid rgb(44, 44, 44);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 90%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 thead{
   background-color: rgb(44, 44, 44);
@@ -79,6 +85,14 @@ td {
   align-items: center;
 }
 .rank{
+  text-align: center;
+  font-weight: bold;
+}
+.remove{
+  text-align: center;
+  font-weight: bold;
+}
+.priceChange1d{
   text-align: center;
   font-weight: bold;
 }

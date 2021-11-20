@@ -97,48 +97,50 @@ export const App = () => {
                         Add
                     </button>
                 </form>
-                <table>
-                    <thead>
-                    <tr>
-                        <td>Rank</td>
-                        <td>Name</td>
-                        <td>Price</td>
-                        <td>24h Change</td>
-                        <td>Remove</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {/* Filtering to check for the searched crypto */}
-                    {cryptoListFav.map((crypto: crypto, id: number) => {
-                        return (
-                            <>
-                                <tr id={id.toString()}>
-                                    <td className="rank">{crypto.rank}</td>
-                                    <td className="logo">
-                                        <a href={crypto.websiteUrl}>
-                                            <img src={crypto.icon} alt="logo"
-                                                 width="30px"/>
-                                        </a>
-                                        <p>{crypto.name}</p>
-                                        <p className="symbol">• {crypto.symbol}</p>
-                                    </td>
-                                    <td>{crypto.price.toFixed(2)}$</td>
-                                    <td>{crypto.priceChange1d}</td>
-                                    <td>
-                                        <button className="button-delete"
-                                            onClick={() => {
-                                                deleteCryptoListFav(id);
-                                            }}
-                                        >
-                                            X
-                                        </button>
-                                    </td>
-                                </tr>
-                            </>
-                        );
-                    })}
-                    </tbody>
-                </table>
+                <div className="list">
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>Rank</td>
+                            <td>Name</td>
+                            <td>Price</td>
+                            <td>24h Change</td>
+                            <td>Remove</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {/* Filtering to check for the searched crypto */}
+                        {cryptoListFav.map((crypto: crypto, id: number) => {
+                            return (
+                                <>
+                                    <tr id={id.toString()}>
+                                        <td className="rank">{crypto.rank}</td>
+                                        <td className="logo">
+                                            <a href={crypto.websiteUrl}>
+                                                <img src={crypto.icon} alt="logo"
+                                                     width="30px"/>
+                                            </a>
+                                            <p>{crypto.name}</p>
+                                            <p className="symbol">• {crypto.symbol}</p>
+                                        </td>
+                                        <td>{crypto.price.toFixed(2)}$</td>
+                                        <td className="priceChange1d">{crypto.priceChange1d}</td>
+                                        <td className="remove">
+                                            <button className="button-delete"
+                                                    onClick={() => {
+                                                        deleteCryptoListFav(id);
+                                                    }}
+                                            >
+                                                X
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </>
+                            );
+                        })}
+                        </tbody>
+                    </table>
+                </div>
                 <div className="bottom">
                     <a href="" id="options" className="imageLink"><img alt="option" src={wrench}/></a>
                     {new Date().toLocaleTimeString()}
