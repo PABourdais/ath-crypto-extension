@@ -9,22 +9,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: black;
 }
 
-.List {
-  border-color: black;
-  border-width: 1px;
-  border-radius: 10px;
-  width: 50%;
-}
-
-.List-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+h1{
+  color: #0e470e;
 }
 
 a.imageLink

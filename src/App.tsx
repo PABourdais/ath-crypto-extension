@@ -94,6 +94,7 @@ export const App = () => {
                         <td>Name</td>
                         <td>Symbol</td>
                         <td>Price</td>
+                        <td>Remove</td>
                     </tr>
                     </thead>
                     <tbody>
@@ -103,10 +104,23 @@ export const App = () => {
                                 <>
                                     <tr id={id}>
                                         <td className="rank">{1}</td>
-                                        <td className="logo">{val}
+                                        <td className="logo">
+                                            <a href={'http://www.bitcoin.org'}>
+                                                <img src={'https://static.coinstats.app/coins/Bitcoin6l39t.png'} alt="logo" width="30px" />
+                                            </a>
+                                            <p>{val}</p>
                                         </td>
                                         <td className="symbol">{val}</td>
                                         <td>{102}$</td>
+                                        <td>
+                                            <button
+                                            onClick={() => {
+                                              deleteCrytpoListFav(1);
+                                            }}
+                                        >
+                                            <img alt="remove" src={trash}/>
+                                        </button>
+                                        </td>
                                     </tr>
                                 </>
                             );
