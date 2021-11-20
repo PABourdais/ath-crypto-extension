@@ -8,7 +8,7 @@ export interface ChromeMessage {
     message: any
 }
 
-export interface crypto {
+export interface cryptoResponse {
     id: string;
     icon: string;
     name: string;
@@ -27,3 +27,16 @@ export interface crypto {
     twitterUrl : string;
     exp : string[];
 }
+
+export interface crypto {
+    id: string;
+    icon: string;
+    name: string;
+    symbol: string;
+    rank: number;
+    price: number;
+    priceBtc: number;
+    priceChange1h : number;
+    websiteUrl : string;
+}
+
