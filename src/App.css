@@ -50,7 +50,7 @@ a:hover
   margin-bottom: 12px;
 }
 
-.Button-form {
+.button-form {
   margin-left: 5px;
 }
 
@@ -62,10 +62,10 @@ a:hover
   font-size: calc(5px + 1vmin);
 }
 
-table{
+table {
   width: 90%;
-  border-collapse: separate;
-  border-spacing: 0 1em;
+  border-collapse: collapse;
+  border: 1px solid rgb(44, 44, 44);
 }
 thead{
   background-color: rgb(44, 44, 44);

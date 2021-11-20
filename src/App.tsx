@@ -7,7 +7,6 @@ import {crypto} from "./types";
 
 import logo_github from './images/logo_github.png';
 import wrench from './images/wrench.png';
-import trash from './images/trash.png';
 
 import './App.css';
 
@@ -94,7 +93,7 @@ export const App = () => {
                         placeholder='Add to fav...'
                         id="crypto-search"
                     />
-                    <button onClick={handleSubmit} value="Envoyer" className="Button-form">
+                    <button onClick={handleSubmit} value="Envoyer" className="button-form">
                         Add
                     </button>
                 </form>
@@ -126,12 +125,12 @@ export const App = () => {
                                     <td>{crypto.price.toFixed(2)}$</td>
                                     <td>{crypto.priceChange1d}</td>
                                     <td>
-                                        <button
+                                        <button className="button-delete"
                                             onClick={() => {
                                                 deleteCryptoListFav(id);
                                             }}
                                         >
-                                            <img alt="remove" src={trash}/>
+                                            X
                                         </button>
                                     </td>
                                 </tr>
