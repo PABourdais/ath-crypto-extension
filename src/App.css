@@ -75,6 +75,9 @@ thead{
 tbody > tr{
   text-align: right;
 }
+td {
+  align-items: center;
+}
 .rank{
   text-align: center;
   font-weight: bold;
@@ -85,6 +88,8 @@ tbody > tr{
   padding-left: 10%;
   gap: 10px;
 }
+
 .symbol{
   text-align: center;
+  font-weight: bold;
 }

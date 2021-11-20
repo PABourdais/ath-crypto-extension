@@ -3,6 +3,8 @@ import Axios from "axios";
 
 import {useChromeStorageLocal} from 'use-chrome-storage';
 
+import {crypto} from "./types";
+
 import logo_github from './images/logo_github.png';
 import wrench from './images/wrench.png';
 import trash from './images/trash.png';
@@ -10,7 +12,7 @@ import trash from './images/trash.png';
 import './App.css';
 
 export const App = () => {
-    const [cryptoList, setCryptoList] = useState<string[]>(['']);
+    const [cryptoList, setCryptoList] = useState<crypto[]>([]);
     const [cryptoListFav, setCryptoListFav, isPersistent, error] = useChromeStorageLocal('counterLocal', cryptoList);
 
     const [search, setSearch] = useState<string>("");
@@ -38,10 +40,21 @@ export const App = () => {
         Axios.get(
             `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=INR`
         ).then((res) => {
-            const cryptoListInit: string[] = []
-            res.data.coins.map((crypto: { symbol: any; }) => {
-
-                cryptoListInit.push(crypto.symbol)
+            const cryptoListInit: crypto[] = []
+            res.data.coins.map((crypto: crypto) => {
+                let cryptoResponse = {
+                    id: crypto.id,
+                    icon: crypto.icon,
+                    name: crypto.name,
+                    symbol: crypto.symbol,
+                    rank: crypto.rank,
+                    price: crypto.price,
+                    priceBtc: crypto.priceBtc,
+                    priceChange1h : crypto.priceChange1h,
+                    priceChange1d : crypto.priceChange1d,
+                    websiteUrl :  crypto.websiteUrl,
+                }
+                cryptoListInit.push(cryptoResponse)
             })
             setCryptoList(cryptoListInit);
         });
@@ -60,15 +73,13 @@ export const App = () => {
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault()
         const newCryptoList = cryptoListFav
-
-        if (cryptoList.includes(search)) {
-            newCryptoList.unshift(search);
-            setCryptoListFav(newCryptoList);
-            setSearch('')
-        } else {
-            console.log('search is not in cryptoList')
-        }
-
+        cryptoList.forEach(crypto => {
+            if (crypto.symbol === search){
+                newCryptoList.unshift(crypto);
+                setCryptoListFav(newCryptoList);
+                setSearch('')
+            }
+        })
     }
 
     return (
@@ -92,39 +103,41 @@ export const App = () => {
                     <tr>
                         <td>Rank</td>
                         <td>Name</td>
-                        <td>Symbol</td>
                         <td>Price</td>
+                        <td>24h Change</td>
                         <td>Remove</td>
                     </tr>
                     </thead>
                     <tbody>
                     {/* Filtering to check for the searched crypto */}
-                    {cryptoListFav .map((val: { rank: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; websiteUrl: string | undefined; icon: string | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; symbol: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }, id: string | undefined) => {
-                            return (
-                                <>
-                                    <tr id={id}>
-                                        <td className="rank">{1}</td>
-                                        <td className="logo">
-                                            <a href={'http://www.bitcoin.org'}>
-                                                <img src={'https://static.coinstats.app/coins/Bitcoin6l39t.png'} alt="logo" width="30px" />
-                                            </a>
-                                            <p>{val}</p>
-                                        </td>
-                                        <td className="symbol">{val}</td>
-                                        <td>{102}$</td>
-                                        <td>
-                                            <button
+                    {cryptoListFav.map((crypto: crypto, id: number) => {
+                        return (
+                            <>
+                                <tr id={id.toString()}>
+                                    <td className="rank">{crypto.rank}</td>
+                                    <td className="logo">
+                                        <a href={crypto.websiteUrl}>
+                                            <img src={crypto.icon} alt="logo"
+                                                 width="30px"/>
+                                        </a>
+                                        <p>{crypto.name}</p>
+                                        <p className="symbol">• {crypto.symbol}</p>
+                                    </td>
+                                    <td>{crypto.price.toFixed(2)}$</td>
+                                    <td>{crypto.priceChange1d}</td>
+                                    <td>
+                                        <button
                                             onClick={() => {
-                                              deleteCryptoListFav(1);
+                                                deleteCryptoListFav(id);
                                             }}
                                         >
                                             <img alt="remove" src={trash}/>
                                         </button>
-                                        </td>
-                                    </tr>
-                                </>
-                            );
-                        })}
+                                    </td>
+                                </tr>
+                            </>
+                        );
+                    })}
                     </tbody>
                 </table>
                 <div className="bottom">

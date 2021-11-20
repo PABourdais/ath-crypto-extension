@@ -37,6 +37,7 @@ export interface crypto {
     price: number;
     priceBtc: number;
     priceChange1h : number;
+    priceChange1d: number;
     websiteUrl : string;
 }
 
