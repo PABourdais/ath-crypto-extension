@@ -10,8 +10,8 @@ import trash from './images/trash.png';
 import './App.css';
 
 export const App = () => {
-    const [crytpoList, setCrytpoList] = useState<string[]>(['']);
-    const [crytpoListFav, setCrytpoListFav, isPersistent, error] = useChromeStorageLocal('counterLocal', crytpoList);
+    const [cryptoList, setCryptoList] = useState<string[]>(['']);
+    const [cryptoListFav, setCryptoListFav, isPersistent, error] = useChromeStorageLocal('counterLocal', cryptoList);
 
     const [search, setSearch] = useState<string>("");
 
@@ -43,14 +43,14 @@ export const App = () => {
 
                 cryptoListInit.push(crypto.symbol)
             })
-            setCrytpoList(cryptoListInit);
+            setCryptoList(cryptoListInit);
         });
     }, []);
 
-    /* delete item in crytpoList*/
-    const deleteCrytpoListFav = (cryptoIndex: number) => {
-        const newCrytpoList = crytpoListFav.filter((_: any, index: number) => index !== cryptoIndex);
-        setCrytpoListFav(newCrytpoList);
+    /* delete item in cryptoList*/
+    const deleteCryptoListFav = (cryptoIndex: number) => {
+        const newCryptoList = cryptoListFav.filter((_: any, index: number) => index !== cryptoIndex);
+        setCryptoListFav(newCryptoList);
     }
 
     const handleChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
@@ -59,14 +59,14 @@ export const App = () => {
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault()
-        const newCrytpoList = crytpoListFav
+        const newCryptoList = cryptoListFav
 
-        if (crytpoList.includes(search)) {
-            newCrytpoList.unshift(search);
-            setCrytpoListFav(newCrytpoList);
+        if (cryptoList.includes(search)) {
+            newCryptoList.unshift(search);
+            setCryptoListFav(newCryptoList);
             setSearch('')
         } else {
-            console.log('search is not in crytpoList')
+            console.log('search is not in cryptoList')
         }
 
     }
@@ -99,7 +99,7 @@ export const App = () => {
                     </thead>
                     <tbody>
                     {/* Filtering to check for the searched crypto */}
-                    {crytpoListFav .map((val: { rank: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; websiteUrl: string | undefined; icon: string | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; symbol: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }, id: string | undefined) => {
+                    {cryptoListFav .map((val: { rank: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; websiteUrl: string | undefined; icon: string | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; symbol: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }, id: string | undefined) => {
                             return (
                                 <>
                                     <tr id={id}>
@@ -115,7 +115,7 @@ export const App = () => {
                                         <td>
                                             <button
                                             onClick={() => {
-                                              deleteCrytpoListFav(1);
+                                              deleteCryptoListFav(1);
                                             }}
                                         >
                                             <img alt="remove" src={trash}/>
