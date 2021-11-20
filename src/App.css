@@ -63,6 +63,11 @@ a:hover
   margin-left: 5px;
 }
 
+.button-delete {
+  background-color: white;
+  border: 0;
+}
+
 .link {
   display: flex;
   flex-direction: row;
@@ -108,9 +113,15 @@ td {
   text-align: center;
   font-weight: bold;
 }
-.priceChange1d{
+.priceChange1dUp{
   text-align: center;
   font-weight: bold;
+  color: green;
+}
+.priceChange1dDown{
+  text-align: center;
+  font-weight: bold;
+  color: red;
 }
 .logo{
   display: flex;

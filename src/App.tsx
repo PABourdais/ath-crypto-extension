@@ -12,29 +12,10 @@ import './App.css';
 
 export const App = () => {
     const [cryptoList, setCryptoList] = useState<crypto[]>([]);
-    const [cryptoListFav, setCryptoListFav, isPersistent, error] = useChromeStorageLocal('counterLocal', cryptoList);
-
     const [search, setSearch] = useState<string>("");
 
-    /*    {
-            "id" : "bitcoin",
-            "icon" : "https://static.coinstats.app/coins/Bitcoin6l39t.png",
-            "name" : "Bitcoin",
-            "symbol" : "BTC",
-            "rank" : 1,
-            "price" : 58484.279460425045,
-            "priceBtc" : 1,
-            "volume" : 33504237841.258633,
-            "marketCap" : 1104098744913.284,
-            "availableSupply" : 18878556,
-            "totalSupply" : 21000000,
-            "priceChange1h" : -0.12,
-            "priceChange1d" : 1.46,
-            "priceChange1w" :  -7.94,
-            "websiteUrl" : "http://www.bitcoin.org",
-            "twitterUrl" : "https://twitter.com/bitcoin",
-            "exp" : ["https://blockchair.com/bitcoin/", "https://btc.com/", "https://btc.tokenview.com/"]
-        }*/
+    const [cryptoListFav, setCryptoListFav, isPersistent, error] = useChromeStorageLocal('counterLocal', cryptoList);
+
     useEffect(() => {
         Axios.get(
             `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=INR`
@@ -59,7 +40,6 @@ export const App = () => {
         });
     }, []);
 
-    /* delete item in cryptoList*/
     const deleteCryptoListFav = (cryptoIndex: number) => {
         const newCryptoList = cryptoListFav.filter((_: any, index: number) => index !== cryptoIndex);
         setCryptoListFav(newCryptoList);
@@ -110,7 +90,6 @@ export const App = () => {
                         </tr>
                         </thead>
                         <tbody>
-                        {/* Filtering to check for the searched crypto */}
                         {cryptoListFav.map((crypto: crypto, id: number) => {
                             return (
                                 <>
@@ -122,10 +101,10 @@ export const App = () => {
                                                      width="30px"/>
                                             </a>
                                             <p>{crypto.name}</p>
-                                            <p className="symbol">• {crypto.symbol}</p>
+                                            <p className="symbol" >• {crypto.symbol}</p>
                                         </td>
                                         <td>{crypto.price.toFixed(2)}$</td>
-                                        <td className="priceChange1d">{crypto.priceChange1d}</td>
+                                        <td className={crypto.priceChange1d > 0 ? "priceChange1dUp" : "priceChange1dDown"}>{crypto.priceChange1d}%</td>
                                         <td className="remove">
                                             <button className="button-delete"
                                                     onClick={() => {
