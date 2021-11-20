@@ -47,20 +47,6 @@ export const App = () => {
         });
     }, []);
 
-    const listItems = crytpoListFav.map((crypto: {} | null | undefined, index: number) =>
-        <li className="List-content">
-            <a target="_blank" href={"https://www.google.com/search?q=" + crypto}>{crypto}</a>
-            - 500 $
-            <button
-                onClick={() => {
-                    deleteCrytpoListFav(index);
-                }}
-            >
-                <img alt="remove" src={trash}/>
-            </button>
-        </li>
-    );
-
     /* delete item in crytpoList*/
     const deleteCrytpoListFav = (cryptoIndex: number) => {
         const newCrytpoList = crytpoListFav.filter((_: any, index: number) => index !== cryptoIndex);
@@ -101,7 +87,32 @@ export const App = () => {
                         Add
                     </button>
                 </form>
-                <ul className="List">{listItems}</ul>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Rank</td>
+                        <td>Name</td>
+                        <td>Symbol</td>
+                        <td>Price</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {/* Filtering to check for the searched crypto */}
+                    {crytpoListFav .map((val: { rank: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; websiteUrl: string | undefined; icon: string | undefined; name: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; symbol: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }, id: string | undefined) => {
+                            return (
+                                <>
+                                    <tr id={id}>
+                                        <td className="rank">{1}</td>
+                                        <td className="logo">{val}
+                                        </td>
+                                        <td className="symbol">{val}</td>
+                                        <td>{102}$</td>
+                                    </tr>
+                                </>
+                            );
+                        })}
+                    </tbody>
+                </table>
                 <div className="bottom">
                     <a href="" id="options" className="imageLink"><img alt="option" src={wrench}/></a>
                     {new Date().toLocaleTimeString()}

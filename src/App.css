@@ -71,3 +71,30 @@ a:hover
   align-items: center;
   font-size: calc(5px + 1vmin);
 }
+
+table{
+  width: 90%;
+  border-collapse: separate;
+  border-spacing: 0 1em;
+}
+thead{
+  background-color: rgb(44, 44, 44);
+  color: white;
+  text-align: center;
+}
+tbody > tr{
+  text-align: right;
+}
+.rank{
+  text-align: center;
+  font-weight: bold;
+}
+.logo{
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10%;
+  gap: 10px;
+}
+.symbol{
+  text-align: center;
+}
