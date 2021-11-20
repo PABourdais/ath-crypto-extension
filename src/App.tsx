@@ -84,6 +84,7 @@ export const App = () => {
     return (
         <div className="App">
             <header className="App-header">
+                <body>
                 <h1>ATH crypto extension</h1>
                 <form onSubmit={handleSubmit}>
                     <input
@@ -141,12 +142,17 @@ export const App = () => {
                         </tbody>
                     </table>
                 </div>
+                </body>
                 <div className="bottom">
-                    <a href="" id="options" className="imageLink"><img alt="option" src={wrench}/></a>
-                    {new Date().toLocaleTimeString()}
-                    <a href="https://github.com/PABourdais/ath-crypto-extension" id="github" className="imageLink"
-                       target="_blank"><img alt="github" src={logo_github}/></a>
+                    <p className="date">{new Date().toLocaleTimeString()}</p>
+                    <div className="link">
+                        <a href="" id="options" className="imageLink"><img alt="option" src={wrench}/></a>
+                        <a href="https://coinstats.app/" id="coinstats">coinstats</a>
+                        <a href="https://github.com/PABourdais/ath-crypto-extension" id="github" className="imageLink"
+                           target="_blank"><img alt="github" src={logo_github}/></a>
+                    </div>
                 </div>
+
             </header>
         </div>
     );
