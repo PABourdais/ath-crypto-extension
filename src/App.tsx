@@ -78,49 +78,51 @@ export const App = () => {
                         Add
                     </button>
                 </form>
-                <div className="list">
-                    <table>
-                        <thead>
-                        <tr>
-                            <td>Rank</td>
-                            <td>Name</td>
-                            <td>Price</td>
-                            <td>24h Change</td>
-                            <td>Remove</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {cryptoListFav.map((crypto: crypto, id: number) => {
-                            return (
-                                <>
-                                    <tr id={id.toString()}>
-                                        <td className="rank">{crypto.rank}</td>
-                                        <td className="logo">
-                                            <a href={crypto.websiteUrl}>
-                                                <img src={crypto.icon} alt="logo"
-                                                     width="30px"/>
-                                            </a>
-                                            <p>{crypto.name}</p>
-                                            <p className="symbol" >• {crypto.symbol}</p>
-                                        </td>
-                                        <td>{crypto.price.toFixed(2)}$</td>
-                                        <td className={crypto.priceChange1d > 0 ? "priceChange1dUp" : "priceChange1dDown"}>{crypto.priceChange1d}%</td>
-                                        <td className="remove">
-                                            <button className="button-delete"
-                                                    onClick={() => {
-                                                        deleteCryptoListFav(id);
-                                                    }}
-                                            >
-                                                X
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </>
-                            );
-                        })}
-                        </tbody>
-                    </table>
-                </div>
+                {cryptoListFav.length > 0 ?
+                    <div className="list">
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>Rank</td>
+                                <td>Name</td>
+                                <td>Price</td>
+                                <td>24h Change</td>
+                                <td>Remove</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {cryptoListFav.map((crypto: crypto, id: number) => {
+                                return (
+                                    <>
+                                        <tr id={id.toString()}>
+                                            <td className="rank">{crypto.rank}</td>
+                                            <td className="logo">
+                                                <a href={crypto.websiteUrl}>
+                                                    <img src={crypto.icon} alt="logo"
+                                                         width="30px"/>
+                                                </a>
+                                                <p>{crypto.name}</p>
+                                                <p className="symbol" >• {crypto.symbol}</p>
+                                            </td>
+                                            <td>{crypto.price.toFixed(2)}$</td>
+                                            <td className={crypto.priceChange1d > 0 ? "priceChange1dUp" : "priceChange1dDown"}>{crypto.priceChange1d}%</td>
+                                            <td className="remove">
+                                                <button className="button-delete"
+                                                        onClick={() => {
+                                                            deleteCryptoListFav(id);
+                                                        }}
+                                                >
+                                                    X
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </>
+                                );
+                            })}
+                            </tbody>
+                        </table>
+                    </div>
+                    : <></>}
                 </body>
                 <div className="bottom">
                     <p className="date">{new Date().toLocaleTimeString()}</p>
