@@ -126,7 +126,7 @@ export const App = () => {
                     <p className="date">{new Date().toLocaleTimeString()}</p>
                     <div className="link">
                         <a href="" id="options" className="imageLink"><img alt="option" src={wrench}/></a>
-                        <a href="https://coinstats.app/" id="coinstats">coinstats</a>
+                        <a href="https://coinstats.app/" id="coinstats" target="_blank">coinstats</a>
                         <a href="https://github.com/PABourdais/ath-crypto-extension" id="github" className="imageLink"
                            target="_blank"><img alt="github" src={logo_github}/></a>
                     </div>
